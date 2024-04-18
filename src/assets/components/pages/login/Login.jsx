@@ -44,6 +44,11 @@ export default function SignInSide() {
     });
   };
 
+  const sucessoLogin = (credentialResponse) => {
+    const decoded = jwtDecode(credentialResponse?.credential);
+    console.log(decoded);
+  }
+
   return (
     <ThemeProvider theme={defaultTheme}>
       <Grid container component="main" sx={{ height: "100vh" }}>
@@ -133,8 +138,7 @@ export default function SignInSide() {
               </Grid>
               <GoogleLogin
                 onSuccess={(credentialResponse) => {
-                  const decoded = jwtDecode(credentialResponse?.credential);
-                  console.log(decoded);
+                  sucessoLogin(credentialResponse)
                 }}
                 onError={() => {
                   console.log("Login Failed");
