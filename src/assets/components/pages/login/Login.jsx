@@ -14,6 +14,7 @@ import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { GoogleLogin } from "@react-oauth/google";
 import { jwtDecode } from "jwt-decode";
+import { LoginUsuario } from "../../services/loginService";
 
 function Copyright(props) {
   return (
@@ -38,10 +39,16 @@ export default function SignInSide() {
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
+    let login = {email: data.get("email"),
+    password: data.get("password")}
     console.log({
       email: data.get("email"),
       password: data.get("password"),
+      login
+
     });
+
+    LoginUsuario(login, 'auth/login')
   };
 
   const sucessoLogin = (credentialResponse) => {
