@@ -28,6 +28,9 @@ function Navbar() {
                     <li className="menu__item">
                         <Link to='/comunidade' className="menu__link">Blog</Link>
                     </li>
+                    <li className="menu__item">
+                        <Link to='/login' className="menu__link">Entrar</Link>
+                    </li>
                 </ul>
             </nav>
         </header>

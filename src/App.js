@@ -8,6 +8,7 @@ import Blog from "./assets/components/pages/blog/Blog";
 import Login from "./assets/components/pages/login/Login";
 import Parceiros from "./assets/components/pages/parceiros/Parceiros";
 import Funcionalidades from "./assets/components/pages/funcionalidades/Funcionalidades";
+import CadastreSe from './assets/components/pages/cadastre-se/CadastreSe'
 
 function App() {
   return (
@@ -24,6 +25,8 @@ function App() {
           <Route path="/comunidade" element={<Blog />} />
 
           <Route path="/login" element={<Login />} />
+
+          <Route path="/cadastre-se" element={<CadastreSe />} />
 
           <Route path="/parceiros" element={<Parceiros />} />
 
